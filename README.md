@@ -66,9 +66,11 @@ TODO
 TODO
 
 
-0 The Burrows-Wheeler Transform
+0 Extra
 ------------------
  
-TODO
-
+- Minimum Spanning Tree
+- Bloom Filter
+- Skip List
+- Treap
 
