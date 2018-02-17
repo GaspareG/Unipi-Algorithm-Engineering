@@ -4,6 +4,7 @@
 #include <iostream>
 #include <iterator> 
 
+// TODO Refactor in separate files
 using namespace std;
 
 int log2(int x){

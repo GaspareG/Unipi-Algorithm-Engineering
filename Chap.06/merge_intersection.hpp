@@ -18,13 +18,13 @@ std::vector<T> merge_intersection(const std::vector<T>& a, const std::vector<T>&
     if( *x == *y )
     {
       intersection.push_back(*x);
-      x++;
-      y++;
+      ++x;
+      ++y;
     }
     else if( *x < *y )
-      x++;  
+      ++x;  
     else
-      y++;
+      ++y;
   }
   return intersection;
 }

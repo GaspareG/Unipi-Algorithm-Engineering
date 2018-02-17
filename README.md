@@ -73,14 +73,17 @@ Chapters:
 11 Integer Coding
 ------------------
  
-- Unary code
-- Fixed-Length code
-- Elias Gamma & Delta codes
-- Rice code
-- PForDelta code
-- (s,c)-dense code
-- Interpolative code
-- Elias-Fano code
+- Binary code ([binary_code.hpp](Chap.11/binary_code.hpp))
+- Unary code ([unary_code.hpp](Chap.11/unary_code.hpp))
+- Fixed-Length code ([fixed_length_code.hpp](Chap.11/fixed_length_code.hpp))
+- Elias Gamma code ([elias_gamma_code.hpp](Chap.11/elias_gamma_code.hpp))
+- Elias Delta code ([elias_delta_code.hpp](Chap.11/elias_delta_code.hpp))
+- Rice code ([rice_code.hpp](Chap.11/rice_code.hpp))
+- PForDelta code ([pfordelta_code.hpp](Chap.11/pfordelta_code.hpp))
+- Variable-byte code ([variable_byte_code.hpp](Chap.11/variable_byte_code.hpp))
+- (s,c)-dense code ([sc_dende_code.hpp](Chap.11/sc_dende_code.hpp))
+- Interpolative code ([interpolative_code.hpp](Chap.11/interpolative_code.hpp))
+- Elias-Fano code ([elias_fano.hpp](Chap.11/elias_fano.hpp))
 
 12 Statistical Coding
 ------------------
