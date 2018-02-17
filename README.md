@@ -1,7 +1,8 @@
 # AlgorithmEngineering
-implementation of some algorithms seen during the Algorithm Engineer course @ UniPi
 
-As seen in the [official notes](http://didawiki.di.unipi.it/lib/exe/fetch.php/magistraleinformaticanetworking/ae/ae2017/main_2.pdf) of the course
+implementation of some algorithms seen during the Algorithm Engineer course @ UniPi.
+
+[Official notes](http://didawiki.di.unipi.it/lib/exe/fetch.php/magistraleinformaticanetworking/ae/ae2017/main_2.pdf) of the course.
 
 Chapters:
 
@@ -34,10 +35,10 @@ Chapters:
 6 Set Intersection
 ------------------
  
-- Merge-based Set intersection
-- Binary-search-based Set intersection
-- Mutual Partitioning Set intersection
-- Doubling Search Set intersection
+- Merge-based Set intersection ([merge_intersection.hpp](Chap.06/merge_intersection.hpp))
+- Binary-search-based Set intersection ([binary_search.hpp](Chap.06/binary_search_intersection.hpp))
+- Mutual Partitioning Set intersection ([mutual_partitioning.hpp](Chap.06/mutual_partitioning.hpp))
+- Doubling Search Set intersection ([doubling_search.hpp](Chap.06/doubling_search.hpp))
 
 7 Sorting Strings
 ------------------
