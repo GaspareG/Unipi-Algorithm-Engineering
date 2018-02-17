@@ -17,9 +17,9 @@ int log2(int x) {
 std::vector<bool> binary_encode(int x, int fl=0) {
   int l=log2(x);
   std::vector<bool> r(std::max(fl, l), 0);
-  int start=(fl<l)?0:(fl-l)-1;
+  int start=r.size();
   do
-    r[++start] = x&1;
+    r[--start] = x&1;
   while( (x>>=1) > 0 );
   return r;
 }

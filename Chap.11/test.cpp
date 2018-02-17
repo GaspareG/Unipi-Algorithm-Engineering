@@ -1,11 +1,15 @@
-#include <algorithm>
-#include <vector>
-#include <bitset>
-#include <iostream>
-#include <iterator> 
+#include <bits/stdc++.h>
 
-// TODO Refactor in separate files
+#include "binary_code.hpp"
+#include "unary_code.hpp"
+#include "elias_gamma_code.hpp"
+#include "elias_delta_code.hpp"
+#include "rice_code.hpp"
+
 using namespace std;
+
+/*
+// TODO Refactor in separate files
 
 int log2(int x){
   int i=0;
@@ -129,77 +133,73 @@ pair<vector<bool>, vector<bool>> eliasFano(vector<int> S)
   }
   return make_pair(H, L);
 }
-
+*/
 
 void printb(vector<bool> b)
 {
   for(auto v : b)
     cout << (v ? "1" : "0");
-  cout << endl;
 }
+
 int main()
 {
 
-  vector<int> path;
-  path.push_back(1);
-  path.push_back(2);
-  path.push_back(3);
-  path.push_back(5);
-  path.push_back(7);
-  path.push_back(9);
-  path.push_back(11);
-  path.push_back(15);
-  path.push_back(18);
-  path.push_back(19);
-  path.push_back(20);
-  path.push_back(21);
-  printb(interpolativeCoding(path));
-
-
-  for(int i=1; i<16; i++)
+	for(int i=1; i<=64; i++)
   {
-    printf("unary(%2d) = ", i);
-    printb(unary(i));
-  }
- 
-  for(int i=1; i<16; i++)
-  {
-    printf("binary(%2d) = ", i);
-    printb(binary(i));
-  }
+    printf("=========================================================\n");
+		printf("[%2d]\n", i);
 
-  for(int i=1; i<16; i++)
-  {
-    printf("gamma(%2d) = ", i);
-    printb(gamma(i));
-  }
- 
-  for(int i=1; i<16; i++)
-  {
-    printf("delta(%2d) = ", i);
-    printb(delta(i));
-  }
- 
-    printf("rice[4](%2d) = ", 83);
-    printb(rice(4, 83));
+		printf("\tbinary code: ");
+	  printb(binary_encode(i));
+		printf("\n");
 
-  path.clear();
-  path.push_back(1);
-  path.push_back(4);
-  path.push_back(7);
-  path.push_back(18);
-  path.push_back(24);
-  path.push_back(26);
-  path.push_back(30);
-  path.push_back(31);
+		printf("\tbinary code (8 bit): ");
+	  printb(binary_encode(i, 8));
+		printf("\n");
 
-  printf("H = ");
-  printb(eliasFano(path).first);
-  printf("L = ");
-  printb(eliasFano(path).second);
+		printf("\tbinary decode: ");
+	  printf("%d", binary_decode(binary_encode(i)));
+		printf("\n");
 
-  // L = 0100111000101011
-  //      100111000101011
-  // H = 1011000100110110
-  //     0100111011001001
+		printf("\tunary code: ");
+	  printb(unary_encode(i));
+		printf("\n");
+
+		printf("\tunary code (r): ");
+	  printb(unary_encode(i, false));
+		printf("\n");
+
+		printf("\tunary decode: ");
+	  printf("%d", unary_decode(unary_encode(i)));
+		printf("\n");
+
+		printf("\tunary decode (r): ");
+	  printf("%d", unary_decode(unary_encode(i, true), true));
+		printf("\n");
+
+		printf("\tgamma encode: ");
+	  printb(gamma_encode(i));
+		printf("\n");
+
+		printf("\tgamma decode: ");
+	  printf("%d", gamma_decode(gamma_encode(i)));
+		printf("\n");
+
+		printf("\tdelta encode: ");
+	  printb(delta_encode(i));
+		printf("\n");
+
+		printf("\tdelta decode: ");
+	  printf("%d", delta_decode(delta_encode(i)));
+		printf("\n");
+
+		printf("\trice4 encode: ");
+	  printb(rice_encode(4, i));
+		printf("\n");
+
+		printf("\trice4 decode: ");
+	  printf("%d", rice_decode(4, rice_encode(4, i)));
+		printf("\n");
+
+	}
 }
