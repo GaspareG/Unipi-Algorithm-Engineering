@@ -9,7 +9,7 @@ Chapters:
 ------------------
 
 - Drawing from all un-sampled positions
-- Dictionary of sampled position  
+- Dictionary of sampled positions
 - Sorting sampling
 - Scanning an selecting
 - Heap and random keys
@@ -72,9 +72,11 @@ Chapters:
 11 Integer Coding
 ------------------
  
-- Elias Gamma & Delta
+- Unary code
+- Fixed-Length code
+- Elias Gamma & Delta codes
 - Rice code
-- PForDelta
+- PForDelta code
 - (s,c)-dense code
 - Interpolative code
 - Elias-Fano code
