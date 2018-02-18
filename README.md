@@ -81,7 +81,7 @@ Chapters:
 - Rice code ([rice_code.hpp](Chap.11/rice_code.hpp))
 - PForDelta code ([pfordelta_code.hpp](Chap.11/pfordelta_code.hpp))
 - Variable-byte code ([variable_byte_code.hpp](Chap.11/variable_byte_code.hpp))
-- (s,c)-dense code ([sc_dende_code.hpp](Chap.11/sc_dende_code.hpp))
+- (s,c)-dense code ([sc_dense_code.hpp](Chap.11/sc_dense_code.hpp))
 - Interpolative code ([interpolative_code.hpp](Chap.11/interpolative_code.hpp))
 - Elias-Fano code ([elias_fano.hpp](Chap.11/elias_fano.hpp))
 

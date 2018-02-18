@@ -1,10 +1,16 @@
 #include <bits/stdc++.h>
 
 #include "binary_code.hpp"
-#include "unary_code.hpp"
-#include "elias_gamma_code.hpp"
 #include "elias_delta_code.hpp"
+#include "elias_fano_code.hpp"
+#include "elias_gamma_code.hpp"
+#include "fixed_length_code.hpp"
+#include "interpolative_code.hpp"
+#include "pfordelta_code.hpp"
 #include "rice_code.hpp"
+#include "sc_dense_code.hpp"
+#include "unary_code.hpp"
+#include "variable_byte_code.hpp"
 
 using namespace std;
 

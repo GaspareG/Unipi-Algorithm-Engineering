@@ -7,6 +7,7 @@
 
 #include <vector>
 #include <utility>
+#include <iterator>
 
 int log2(int x) {
   int k=0;
@@ -24,10 +25,16 @@ std::vector<bool> binary_encode(int x, int fl=0) {
   return r;
 }
 
-
-int binary_decode(const std::vector<bool>& s) {
+int binary_decode(std::vector<bool>::iterator first, std::vector<bool>::iterator last) {
   int x=0;
-  for(auto b : s)
-    x = (x<<1)+b;
+  while( first != last ) {
+    x = (x<<1) + *first;
+    ++first;
+  }
   return x;
 }
+
+int binary_decode(std::vector<bool> s) {
+  return binary_decode(s.begin(), s.end());
+}
+

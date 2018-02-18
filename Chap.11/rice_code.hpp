@@ -18,14 +18,9 @@ std::vector<bool> rice_encode(int k, int x) {
   return ret;
 }
 
-
-// TODO binary range decoding
-int rice_decode(int k, const std::vector<bool>& s) {
+int rice_decode(int k, std::vector<bool> s) {
   int q = unary_decode(s);
-  int r=0;
-  size_t i=q;
-  while( i<s.size() )
-    r = (r<<1) + s[i++];
+  int r = binary_decode(s.begin()+q, s.end());
   int x = ((q-1)<<k)+r+1;
   return x;
 }

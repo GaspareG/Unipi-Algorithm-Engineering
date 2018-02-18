@@ -18,7 +18,7 @@ std::vector<bool> gamma_encode(int x) {
   return u;
 }
 
-int gamma_decode(const std::vector<bool>& s) {
+int gamma_decode(std::vector<bool> s) {
   return binary_decode(s);
 }
 
