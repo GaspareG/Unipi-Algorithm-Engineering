@@ -6,7 +6,7 @@ implementation of some algorithms seen during the Algorithm Engineer course @ Un
 
 Chapters:
 
-3 Random Sampling
+[3 Random Sampling](Chap.03/)
 ------------------
 
 - Drawing from all un-sampled positions
@@ -16,13 +16,13 @@ Chapters:
 - Heap and random keys
 - Reservoir sampling
 
-4 List Ranking
+[4 List Ranking](Chap.04/)
 ------------------
  
 - Pointer jumping technique
 - Divide&Conquer approach
 
-5 Sorting Atomic Items
+[5 Sorting Atomic Items](Chap.05/)
 ------------------
  
 - Binary Merge sort
@@ -32,7 +32,7 @@ Chapters:
 - Bounded space Quick sort
 - Dual Pivot Quick sort
 
-6 Set Intersection
+[6 Set Intersection](Chap.06/)
 ------------------
  
 - Merge-based Set intersection ([merge_intersection.hpp](Chap.06/merge_intersection.hpp))
@@ -40,14 +40,14 @@ Chapters:
 - Mutual Partitioning Set intersection ([mutual_partitioning.hpp](Chap.06/mutual_partitioning.hpp))
 - Doubling Search Set intersection ([doubling_search.hpp](Chap.06/doubling_search.hpp))
 
-7 Sorting Strings
+[7 Sorting Strings](Chap.07/)
 ------------------
  
 - MSD Radix sort
 - LSD Radix sort
 - Multikey Quick sort
 
-8 The Dictionary Problem
+[8 The Dictionary Problem](Chap.08/)
 ------------------
  
 - Order Preserving Minimal Perfect Hash Function
@@ -55,13 +55,13 @@ Chapters:
 - Cuckoo hashing
 - Bloom Filters
 
-9 Searching Strings by Prefix
+[9 Searching Strings by Prefix](Chap.09/)
 ------------------
  
 - Compacted Trie
 - Patricia Trie 
 
-10 Searching Strings by Substring
+[10 Searching Strings by Substring](Chap.10/)
 ------------------
  
 - Suffix Array 
@@ -70,7 +70,7 @@ Chapters:
 - Approximate-pattern matching
 - LCA via RMQ
 
-11 Integer Coding
+[11 Integer Coding](Chap.11/)
 ------------------
  
 - Binary code ([binary_code.hpp](Chap.11/binary_code.hpp))
@@ -83,16 +83,16 @@ Chapters:
 - Variable-byte code ([variable_byte_code.hpp](Chap.11/variable_byte_code.hpp))
 - (s,c)-dense code ([sc_dense_code.hpp](Chap.11/sc_dense_code.hpp))
 - Interpolative code ([interpolative_code.hpp](Chap.11/interpolative_code.hpp))
-- Elias-Fano code ([elias_fano.hpp](Chap.11/elias_fano.hpp))
+- Elias-Fano code ([elias_fano_code.hpp](Chap.11/elias_fano_code.hpp))
 
-12 Statistical Coding
+[12 Statistical Coding](Chap.12/)
 ------------------
  
 - Huffman coding
 - Canonical Huffman
 - Arithmetic Coding
 
-13 Dictionary-based compressors
+[13 Dictionary-based compressors](Chap.13/)
 ------------------
  
 - LZ77
@@ -100,7 +100,7 @@ Chapters:
 - LZ78
 - LZW
 
-14 The Burrows-Wheeler Transform
+[14 The Burrows-Wheeler Transform](Chap.14/)
 ------------------
  
 - Burrows-Wheeler Transform
@@ -108,7 +108,7 @@ Chapters:
 - Run-Length-Encoding Transform
 - BZip compressor
 
-0 Extra
+[0 Extra](Chap.00/)
 ------------------
  
 - Minimum Spanning Tree: Kruskal
