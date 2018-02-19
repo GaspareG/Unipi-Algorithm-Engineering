@@ -9,12 +9,12 @@ Chapters:
 [3 Random Sampling](Chap.03/)
 ------------------
 
-- Drawing from all un-sampled positions
-- Dictionary of sampled positions
-- Sorting sampling
-- Scanning an selecting
-- Heap and random keys
-- Reservoir sampling
+- Drawing from all un-sampled positions ([drawing_sampling.hpp](Chap.03/drawing_sampling.hpp))
+- Dictionary of sampled positions ([dictionary_sampling.hpp](Chap.03/dictionary_sampling.hpp))
+- Sorting sampling ([sorting_sampling.hpp](Chap.03/sorting_sampling.hpp))
+- Scanning an selecting ([scanning_sampling.hpp](Chap.03/scanning_sampling.hpp))
+- Heap and random keys ([heap_sampling.hpp](Chap.03/heap_sampling.hpp))
+- Reservoir sampling ([reservoir_sampling.hpp](Chap.03/reservoir_sampling.hpp))
 
 [4 List Ranking](Chap.04/)
 ------------------
