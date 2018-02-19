@@ -8,6 +8,7 @@
 #include <vector>
 #include <utility>
 #include <iterator>
+#include <algorithm>
 
 template <class T>
 typename std::vector<T>::iterator doubling_search_intersection(const std::vector<T>& a, const std::vector<T>& b, typename std::vector<T>::iterator result) {
@@ -20,7 +21,9 @@ typename std::vector<T>::iterator doubling_search_intersection(const std::vector
     int k=1;
     while(i+k < n.size() && x > n[i+k])
      k <<= 1;
-    int ip = distance(n.begin(), lower_bound(n.begin(), n.end(), x));
+    auto start = n.begin()+i;
+    auto end = n.begin() + std::min(i+k, (int)n.size());
+    int ip = distance(n.begin(), lower_bound(start, end, x));
     if( ip == n.size() ) break;
     if( n[ip] == x ) {
       *result = x;
