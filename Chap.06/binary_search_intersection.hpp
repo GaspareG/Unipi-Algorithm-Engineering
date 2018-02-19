@@ -9,17 +9,17 @@
 #include <utility>
 
 template <class T>
-std::vector<T> binary_search_intersection(const std::vector<T>& a, const std::vector<T>& b) {
-  std::vector<T> intersection;
-  intersection.reserve(std::min(a.size(), b.size()));
+typename std::vector<T>::iterator binary_search_intersection(const std::vector<T>& a, const std::vector<T>& b, typename std::vector<T>::iterator result) {
   std::vector<T> m = a;
   std::vector<T> n = b;
   if( m.size() > n.size() )
     std::swap(m, n);
   for(T x : m) {
     auto it = std::lower_bound(n.begin(), n.end(), x);
-    if( it != n.end() && *it == x )
-      intersection.push_back(x);  
+    if( it != n.end() && *it == x ){
+      *result = *it;
+      ++result;
+    }  
   }
-  return intersection;
+  return result;
 }

@@ -20,54 +20,69 @@ vector<int> randomSet(int size, int max, int min=1) {
   mt19937 rng(rd());
   uniform_int_distribution<int> uni(min, max);
 
-  set  
-    
+  set<int> s;
+  while( s.size() < size ) s.insert( uni(rng) );
+  return vector<int>(s.begin(), s.end());    
 }
 
 int main()
 {
 
+  vector<int> size = {100, 1000, 10000, 100000, 1000000, 10000000};
 
-  set<int> sa, sb;
-  while( sa.size() < 50 ) sa.insert( uni(rng) );
-  while( sb.size() < 20 ) sb.insert( uni(rng) );
 
-  vector<int> a(sa.begin(), sa.end());
-  vector<int> b(sb.begin(), sb.end());
-  vector<int> c(20);
 
-  auto it = set_intersection(a.begin(), a.end(), b.begin(), b.end(), c.begin());
-  c.resize(it-c.begin());
+  for(size_t i=0; i<size.size(); ++i) {
+    for(size_t j=0; j<=i; ++j) {
+      clock_t stl = 0;
+      clock_t binary = 0;
+      clock_t merge = 0;
+      clock_t doubling = 0;
+      clock_t mutual = 0;  
+      clock_t start = 0;  
 
-  auto d = binary_search_intersection<int>(a, b);
-  auto e = merge_intersection<int>(a, b);
-  auto f = doubling_search_intersection<int>(a, b);
-  auto g = mutual_partitioning_intersection<int>(a, b);
+      for(int k=0; k<2; ++k) {
+        vector<int> a = randomSet(size[i], 5*size[i]);
+        vector<int> b = randomSet(size[j], 5*size[i]);
+        vector<int> c(b.size());
 
-  printf("stl set_intersection:\n\t");
-  for(auto x : c)
-    printf("%d ", x);
-  printf("\n");
+        c.clear();
+        start = clock();
+        set_intersection(a.begin(), a.end(), b.begin(), b.end(), c.begin());
+        stl += clock()-start;
 
-  printf("binary_search_intersection:\n\t");
-  for(auto x : d)
-    printf("%d ", x);
-  printf("\n");
+        c.clear();
+        start = clock();
+        binary_search_intersection<int>(a, b, c.begin());
+        binary += clock()-start;
 
-  printf("merge_intersection:\n\t");
-  for(auto x : e)
-    printf("%d ", x);
-  printf("\n");
+        c.clear();
+        start = clock();
+        merge_intersection<int>(a, b, c.begin());
+        merge += clock()-start;
 
-  printf("doubling_search_intersection:\n\t");
-  for(auto x : f)
-    printf("%d ", x);
-  printf("\n");
+        c.clear();
+        start = clock();
+        doubling_search_intersection<int>(a, b, c.begin());
+        doubling += clock()-start;
 
-  printf("mutual_partitioning:\n\t");
-  for(auto x : g)
-    printf("%d ", x);
-  printf("\n");
+        c.clear();
+        start = clock();
+        mutual_partitioning_intersection<int>(a, b, c.begin());
+        mutual += clock()-start;
+      }	
+
+      double stld = (double) stl / CLOCKS_PER_SEC;
+      double merged = (double) merge / CLOCKS_PER_SEC;
+      double binaryd = (double) binary / CLOCKS_PER_SEC;
+      double mutuald = (double) mutual / CLOCKS_PER_SEC;
+      double doublingd = (double) doubling / CLOCKS_PER_SEC;
+
+      printf("| %8d | %8d | %.3fs | %.3fs | %.3fs | %.3fs | %.3fs |\n", size[j], size[i], stld, merged, binaryd, mutuald, doublingd);
+      fflush(stdout);  
+    }
+  }
+
 
   return 0;
 }

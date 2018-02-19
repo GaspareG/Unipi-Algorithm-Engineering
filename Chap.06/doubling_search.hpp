@@ -10,9 +10,7 @@
 #include <iterator>
 
 template <class T>
-std::vector<T> doubling_search_intersection(const std::vector<T>& a, const std::vector<T>& b) {
-  std::vector<T> intersection;
-  intersection.reserve(std::min(a.size(), b.size()));
+typename std::vector<T>::iterator doubling_search_intersection(const std::vector<T>& a, const std::vector<T>& b, typename std::vector<T>::iterator result) {
   std::vector<T> m = a;
   std::vector<T> n = b;
   if( m.size() > n.size() )
@@ -24,9 +22,11 @@ std::vector<T> doubling_search_intersection(const std::vector<T>& a, const std::
      k <<= 1;
     int ip = distance(n.begin(), lower_bound(n.begin(), n.end(), x));
     if( ip == n.size() ) break;
-    if( n[ip] == x )
-      intersection.push_back(x);
+    if( n[ip] == x ) {
+      *result = x;
+      ++result;
+    }
     i = ip; 
   }
-  return intersection;
+  return result;
 }

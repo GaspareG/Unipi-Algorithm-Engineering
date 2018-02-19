@@ -7,24 +7,21 @@
 
 #include <vector>
 #include <utility>
+#include <iterator>
 
 template <class T>
-std::vector<T> merge_intersection(const std::vector<T>& a, const std::vector<T>& b) {
-  std::vector<T> intersection;
-  intersection.reserve(std::min(a.size(), b.size()));
+typename std::vector<T>::iterator merge_intersection(const std::vector<T>& a, const std::vector<T>& b, typename std::vector<T>::iterator result) {
   auto x = a.begin();
   auto y = b.begin();
   while( x != a.end() && y != b.end() ) {
-    if( *x == *y )
-    {
-      intersection.push_back(*x);
+    if( *x < *y ) ++x;
+    else if( *y < *x ) ++y;
+    else {
+      *result = *x;
+      ++result;
       ++x;
       ++y;
     }
-    else if( *x < *y )
-      ++x;  
-    else
-      ++y;
   }
-  return intersection;
+  return result;
 }
