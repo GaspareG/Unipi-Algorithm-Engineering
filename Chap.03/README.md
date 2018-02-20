@@ -19,6 +19,7 @@ Complexities
 -----------
 
 Sampling m integer from a set S of size n.
+
 Block size = B
 
 |   Algorithm     |    Time     | Space | Rnd  |     I/Os       |
@@ -33,7 +34,8 @@ Block size = B
 Benchmark
 ------------------
 
-Sorting sampling omitted (too slow)
+Sorting sampling omitted (too slow).
+
 Execution times (avg of 10):
 
 |  M  |  N  | Drawing  |  Dictionary  |  Scanning  | Heap | Reservoir |
